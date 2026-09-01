@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appointment — EverAfter Wedding Planning</title>
+  <meta name="description" content="Book a complimentary wedding planning consultation with EverAfter. Fill out the form and we'll be in touch within 24 hours." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="page-loader"><div class="loader-ring"></div><div class="loader-text">EverAfter</div></div>
+
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand navbar-brand-custom" href="./index.html"><span class="brand-mark">❦</span> EverAfter</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"><i class="bi bi-list fs-2"></i></button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="./gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="./packages.html">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="./appointment.html">Appointment</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-banner" style="background-image:url('https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=1920')">
+    <div class="banner-content">
+      <h1>Book an Appointment</h1>
+      <nav><ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+        <li class="breadcrumb-item active">Appointment</li>
+      </ol></nav>
+    </div>
+  </header>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5 reveal">
+          <span class="eyebrow text-primary-custom" style="text-transform:uppercase;letter-spacing:.25em;font-size:.78rem;font-weight:600;">Consultation</span>
+          <h2 class="mt-2" style="font-size:clamp(1.8rem,3.5vw,2.6rem);">Let's Start Planning Your Day</h2>
+          <p style="color:var(--text-muted);">Book a complimentary 45-minute consultation with one of our senior planners. We'll discuss your vision, timeline, and budget — no obligation.</p>
+          <div class="mt-4">
+            <div class="contact-info-item">
+              <div class="icon"><i class="bi bi-clock"></i></div>
+              <div><h6>Quick Response</h6><p>We reply within 24 hours of booking.</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="icon"><i class="bi bi-calendar-check"></i></div>
+              <div><h6>Flexible Scheduling</h6><p>In-person or virtual — your choice.</p></div>
+            </div>
+            <div class="contact-info-item">
+              <div class="icon"><i class="bi bi-shield-check"></i></div>
+              <div><h6>No Obligation</h6><p>Free consultation with no commitment.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 reveal">
+          <div class="form-card">
+            <div class="form-success" id="formSuccess">
+              <i class="bi bi-check-circle me-2"></i>Thank you! Your appointment request has been received. We'll contact you within 24 hours.
+            </div>
+            <div class="form-error" id="appointmentError">
+              <i class="bi bi-exclamation-triangle me-2"></i><span id="appointmentErrorText">Something went wrong while sending your request. Please try again or contact us directly.</span>
+            </div>
+            <form id="appointmentForm" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="firstName">First Name *</label>
+                  <input type="text" class="form-control" id="firstName" required minlength="2" />
+                  <div class="invalid-feedback">Please enter your first name (min 2 characters).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="lastName">Last Name *</label>
+                  <input type="text" class="form-control" id="lastName" required minlength="2" />
+                  <div class="invalid-feedback">Please enter your last name (min 2 characters).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Email Address *</label>
+                  <input type="email" class="form-control" id="email" required />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="phone">Phone Number *</label>
+                  <input type="tel" class="form-control" id="phone" required pattern="[0-9 +()\-]{7,}" />
+                  <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="weddingDate">Preferred Wedding Date</label>
+                  <input type="date" class="form-control" id="weddingDate" />
+                  <div class="invalid-feedback">Please select a future date.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="guestCount">Estimated Guest Count *</label>
+                  <input type="number" class="form-control" id="guestCount" required min="1" max="1000" />
+                  <div class="invalid-feedback">Please enter a guest count (1-1000).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="package">Package of Interest *</label>
+                  <select class="form-select" id="package" required>
+                    <option value="" selected disabled>Select a package</option>
+                    <option value="essential">Essential — Day-Of Coordination</option>
+                    <option value="premier">Premier — Partial Planning</option>
+                    <option value="luxury">Luxury — Full-Service Planning</option>
+                    <option value="undecided">Not sure yet</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a package.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="consultMode">Consultation Mode *</label>
+                  <select class="form-select" id="consultMode" required>
+                    <option value="" selected disabled>Select a mode</option>
+                    <option value="in-person">In-Person</option>
+                    <option value="virtual">Virtual (Video Call)</option>
+                    <option value="phone">Phone Call</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a consultation mode.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="message">Tell Us About Your Vision</label>
+                  <textarea class="form-control" id="message" rows="4" maxlength="500"></textarea>
+                  <div class="invalid-feedback">Please keep your message under 500 characters.</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="consent" required />
+                    <label class="form-check-label" for="consent">I agree to be contacted about my appointment request. *</label>
+                    <div class="invalid-feedback">You must agree to be contacted.</div>
+                  </div>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn btn-gold w-100 btn-lg">Request Appointment</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="brand mb-3">❦ EverAfter</div>
+          <p>Luxury wedding planning studio crafting unforgettable celebrations since 2012.</p>
+          <div class="social mt-3"><a href="#"><i class="bi bi-instagram"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-pinterest"></i></a><a href="#"><i class="bi bi-tiktok"></i></a></div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Explore</h5>
+          <a href="./index.html">Home</a><br/><a href="./about.html">About</a><br/><a href="./services.html">Services</a><br/><a href="./gallery.html">Gallery</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Plan</h5>
+          <a href="./packages.html">Packages</a><br/><a href="./appointment.html">Appointment</a><br/><a href="./contact.html">Contact</a><br/><a href="./contact.html">FAQ</a>
+        </div>
+        <div class="col-lg-4">
+          <h5>Get in Touch</h5>
+          <p><i class="bi bi-geo-alt me-2"></i>123 Rose Avenue, New York, NY</p>
+          <p><i class="bi bi-telephone me-2"></i>(212) 555-0192</p>
+          <p><i class="bi bi-envelope me-2"></i>hello@everafter.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span id="current-year">2025</span> EverAfter Wedding Planning. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <button id="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="/main.js"></script>
+  <script>
+    const form = document.getElementById('appointmentForm');
+    const success = document.getElementById('formSuccess');
+    const errorBox = document.getElementById('appointmentError');
+    const errorText = document.getElementById('appointmentErrorText');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtnDefaultText = submitBtn.textContent;
+    const today = new Date().toISOString().split('T')[0];
+    let isSubmitting = false;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (isSubmitting) return;
+
+      success.classList.remove('show');
+      errorBox.classList.remove('show');
+      let valid = true;
+
+      const fields = form.querySelectorAll('input[required], select[required], textarea[required], input[type="checkbox"][required]');
+      fields.forEach(field => {
+        field.classList.remove('is-invalid');
+        if (field.type === 'checkbox') {
+          if (!field.checked) { field.classList.add('is-invalid'); valid = false; }
+        } else if (!field.value.trim()) {
+          field.classList.add('is-invalid'); valid = false;
+        } else if (field.type === 'email') {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) { field.classList.add('is-invalid'); valid = false; }
+        } else if (field.type === 'tel') {
+          if (!/^[0-9 +()\-]{7,}$/.test(field.value)) { field.classList.add('is-invalid'); valid = false; }
+        } else if (field.minLength && field.value.length < field.minLength) {
+          field.classList.add('is-invalid'); valid = false;
+        } else if (field.type === 'number') {
+          const n = parseInt(field.value, 10);
+          if (isNaN(n) || n < 1 || n > 1000) { field.classList.add('is-invalid'); valid = false; }
+        }
+      });
+
+      const weddingDate = document.getElementById('weddingDate');
+      if (weddingDate.value && weddingDate.value < today) {
+        weddingDate.classList.add('is-invalid'); valid = false;
+      }
+
+      const message = document.getElementById('message');
+      if (message.value.length > 500) { message.classList.add('is-invalid'); valid = false; }
+
+      if (!valid) return;
+
+      isSubmitting = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        await window.everafterSubmitForm('appointment', {
+          firstName: document.getElementById('firstName').value.trim(),
+          lastName: document.getElementById('lastName').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          phone: document.getElementById('phone').value.trim(),
+          weddingDate: weddingDate.value,
+          guestCount: document.getElementById('guestCount').value,
+          package: document.getElementById('package').value,
+          consultMode: document.getElementById('consultMode').value,
+          message: message.value.trim(),
+          consent: document.getElementById('consent').checked,
+          source: 'appointment.html'
+        });
+
+        success.classList.add('show');
+        form.reset();
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        console.error('Appointment form submission failed:', err);
+        errorText.textContent = 'Something went wrong while sending your request. Please try again or contact us directly.';
+        errorBox.classList.add('show');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } finally {
+        isSubmitting = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = submitBtnDefaultText;
+      }
+    });
+
+    fieldsLiveValidation();
+    function fieldsLiveValidation() {
+      form.querySelectorAll('input, select, textarea').forEach(field => {
+        field.addEventListener('blur', () => {
+          if (field.hasAttribute('required') && !field.value.trim() && field.type !== 'checkbox') {
+            field.classList.add('is-invalid');
+          } else if (field.value.trim()) {
+            field.classList.remove('is-invalid');
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
