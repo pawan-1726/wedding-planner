@@ -1,33 +1,3 @@
-/* ============================================================
-   EverAfter Wedding Assistant — Client-Side Chatbot
-   ============================================================
-   This is a fully static, rule-based chatbot. It does NOT call
-   any AI service, and it never pretends to be one — it simply
-   matches quick-reply clicks / typed keywords against the
-   predefined question bank below and returns a fixed answer.
-
-   ------------------------------------------------------------
-   EDITING THE CHATBOT'S ANSWERS (no coding knowledge required)
-   ------------------------------------------------------------
-   Everything the bot can say lives in the `chatbotResponses`
-   object below. Each entry looks like:
-
-     key: {
-       quickReply: 'Label shown as a button' | null,
-       keywords:   ['word', 'phrase', ...],   // typed-message matching
-       answer:     'What the bot says.',
-       link:       { href: './packages.html', label: 'View Packages' } // optional
-     }
-
-   - To change what the bot says, edit the `answer` text.
-   - To change/add keywords it should recognize when typed,
-     edit the `keywords` array.
-   - To add a brand-new topic, copy an existing block, give it
-     a new key, and add it to `quickReplyOrder` if you want a
-     button for it.
-   - To change the fallback message (when nothing matches),
-     edit `fallbackAnswer` near the bottom.
-   ============================================================ */
 
 const chatbotResponses = {
   packages: {
